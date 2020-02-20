@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Run Group F Parameters and Analysis</title>
+	<style>
+		 p
+		 {
+		  font-family: Arial, Helvetica, sans-serif;
+		  color: Blue;
+		  background-color: White;
+		  margin: 0;
+		  font-style: italic;
+		  font-size: 30px;
+		  font-weight: bold;
+		 }
+		 div p
+		 {
+		  font-style: italic;
+		  font-size: 40px;
+		 }
+	 </style>
+
+</head>
+
+<body>
+	<center><img src="../../img/title.png" alt="title" style="width:600px;height:150px;"></center>
+	<p> Run Group F Parameters </p>
+	<center>
+     		<table style="width:70%" border="1"> 
+		<tr>
+		    <th>Solenoid</th>
+		    <th>V_cathode</th>
+		    <th>V_GEMs</th>
+		    <th>V_transfer</th>
+		    <th>Run numbers</th>
+		<tr> 
+		    <td>4 T</td>
+		    <td>-4500V</td>
+		    <td>-380</td>
+		    <td>-300</td>
+		    <td>11626, 11629-11660</td>
+		</tr>
+
+    </table>
+	</center>
+t_gap = 789.60 <br />
+<br />
+a0_t = 3098.41<br />
+a1_t = -3.09711<br />
+a2_t = 0.00811743<br />
+<br />
+b0_t = 39.8361<br />
+b1_t = 1.6947<br />
+b2_t = -0.00505784<br />
+<br />
+a0_phi = 0.030559<br />
+a1_phi = 0.0<br />
+a2_phi = 0.0<br />
+<br />
+b0_phi = 0.138236<br />
+b1_phi = -1.00266e-05<br />
+b2_phi = 8.2753e-09<br />
+<br />
+c0_phi = 0.0171642<br />
+c1_phi = 4.38878e-06<br />
+c2_phi = -1.4112e-08<br />
+
+<center>
+<p>Drift Times</p>
+<img src="figs/drift_times.png" alt="drift times" style="width:600px;height:600px;">
+<p>Drift Angles</p>
+<img src="figs/drift_angles.png" alt="drift angles" style="width:600px;height:600px;">
+<p>Drift times vs r and Drift angles vs r</p>
+<img src="figs/t_vs_r.png" alt="t vs r" style="width:400px;height:400px;">
+<img src="figs/phi_vs_r.png" alt="phi vs r" style="width:400px;height:400px;">
+<p>Parameter fits</p>
+<img src="figs/parameters.png" alt="parameters" style="width:400px;height:400px;">
+</center>
+</body>
+</html>
