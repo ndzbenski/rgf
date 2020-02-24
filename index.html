@@ -19,13 +19,64 @@
 		  font-size: 40px;
 		 }
 	 </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'run_number');
+            data.addColumn('number', 'drift_velocity');
+            data.addColumn({id:'i0', type:'number', role:'interval'});
+            data.addColumn({id:'i1', type:'number', role:'interval'});
+            
+            data.addRows([
+                          //[11678,      0.00256761, 0.00256761-0.000114942/2, 0.00256761+0.000114942/2],
+                          //[11684,      0.0025593, 0.0025593-0.000106633/2,   0.0025593+0.000106633/2],
+                          //[11685,      0.00260362, 0.00260362-0.000163102/2, 0.00260362+0.000163102/2],
+                          //[11801,      0.00258033, 0.00258033-0.000172512/2, 0.00258033+0.000172512/2],
+                          [11833,      0.00257808, 0.00257808-0.000100708/2, 0.00257808+0.000100708/2],
+                          [11834,      0.002548, 0.002548-0.000106871/2, 0.002548+0.000106871/2],
+                          [11836,      0.00261928, 0.00261928-0.000148465/2, 0.00261928+0.000148465/2],
+                          [11840,      0.00255248, 0.00255248-0.000172466/2, 0.00255248+0.000172466/2],
+                          [11841,      0.00253169, 0.00253169-0.0001272/2, 0.00253169+0.0001272/2],
+                          [11842,      0.00254899, 0.00254899-0.0000964037/2, 0.00254899+0.0000964037/2],
+                          [11847,      0.00250994, 0.00250994-0.00013212/2, 0.00250994+0.00013212/2],
+                          [11853,      0.00257657, 0.00257657-0.000134479/2, 0.00257657+0.000134479/2],
+                          [11855,      0.00253121, 0.00253121-0.000119626/2, 0.00253121+0.000119626/2],
+                          [11858,      0.00257401, 0.00257401-0.000130733/2, 0.00257401+0.000130733/2],
+                          [11862,      0.0025784, 0.0025784-0.00018224/2, 0.0025784+0.00018224/2],
+                          [11863,      0.00254987, 0.00254987-0.000175843/2, 0.00254987+0.000175843/2],
+                          [11865,      0.00259232, 0.00259232-0.000104463/2, 0.00259232+0.000104463/2],
+                          [11866,      0.00256159, 0.00256159-0.000128387/2, 0.00256159+0.000128387/2],
+                          [11871,      0.00254384, 0.00254384-0.000142882/2, 0.00254384+0.000142882/2]
+                          ]);
+                          
+                          // The intervals data as narrow lines (useful for showing raw source data)
+                          var options = {
+                              hAxis: {title: 'Run Number', minValue: 11830, maxValue: 11875, format:'0'},
+                              vAxis: {title: 'Drift Velocity [cm/ns]', minValue: 0.00245, maxValue: 0.00275},
+                              series: [{'color': '#F911DD'}],
+                              intervals: { style: 'sticks' },
+                              legend: 'none',
+                          };
+                          
+                          
+                          var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+                          
+                          chart.draw(data, options);
+        }
+    </script>
 
 </head>
 
 <body>
 	<center><a href="https://userweb.jlab.org/~nathand/rgf/index.html"><img src="https://userweb.jlab.org/~nathand/rgf/img/title.png" alt="title" style="width:600px;height:150px;"></a></center>
 	
-
+    <p> <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html">DMS Data </a></p>
+    <center><div id="chart_div" style="width: 800px; height: 400px;"></div></center>
+    
 	<p> Run Group F Analysis </p>
 	<center>
      <table style="width:30%" border="1"> 
@@ -41,8 +92,6 @@
     </table>
 	</center>
 
-	<p> <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html">DMS Data </a></p>
-    
     <p> Run Group F Parameters </p>
     <center>
         <table style="width:70%" border="1">
