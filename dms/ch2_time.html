@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Run Group F Parameters and Analysis</title>
+	<style>
+		 p
+		 {
+		  font-family: Arial, Helvetica, sans-serif;
+		  color: Blue;
+		  background-color: White;
+		  margin: 0;
+		  font-style: italic;
+		  font-size: 30px;
+		  font-weight: bold;
+		 }
+		 div p
+		 {
+		  font-style: italic;
+		  font-size: 40px;
+		 }
+	 </style>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+           var data = new google.visualization.DataTable();
+           data.addColumn('number', 'run_number');
+           data.addColumn('number', 'ch2_time');
+           data.addColumn({id:'i0', type:'number', role:'interval'});
+           data.addColumn({id:'i1', type:'number', role:'interval'});
+           
+           data.addRows([
+                         /*[11678,2413.98, 2413.98-/2, 2413.98+/2],
+                         [11684,2416.73, 2416.73-/2, 2416.73+/2],
+                         [11685,2462.52, 2462.52-/2, 2462.52+/2],
+                         [11801,2415.3, 2415.3-/2, 2415.3+/2],
+                         [11833,2423.97, 2423.97-/2, 2423.97+/2],
+                         [11834,2429.05, 2429.05-/2, 2429.05+/2],
+                         [11836,2419.21, 2419.21-/2, 2419.21+/2],
+                         [11840,2428.94, 2428.94-/2, 2428.94+/2],
+                         [11841,2437.32, 2437.32-/2, 2437.32+/2],
+                         [11842,2441.55, 2441.55-/2, 2441.55+/2],
+                         [11847,2420.81, 2420.81-/2, 2420.81+/2],
+                         [11853,2413.97, 2413.97-/2, 2413.97+/2],
+                         [11855,2415.65, 2415.65-/2, 2415.65+/2],
+                         [11858,2410.29, 2410.29-/2, 2410.29+/2],
+                         [11862,2410.41, 2410.41-/2, 2410.41+/2],
+                         [11863,2408.38, 2408.38-/2, 2408.38+/2],
+                         [11865,2397.65, 2397.65-/2, 2397.65+/2],
+                         [11866,2416.86, 2416.86-/2, 2416.86+/2],
+                         [11871,2388.14, 2388.14-/2, 2388.14+/2],
+                         [11873,2411.33, 2411.33-/2, 2411.33+/2],
+                         [11877,2412.4, 2412.4-/2, 2412.4+/2],
+                         [11888,2372.82, 2372.82-/2, 2372.82+/2],
+                         [11892,2370.61, 2370.61-/2, 2370.61+/2],
+                         [11907,2383.67, 2383.67-/2, 2383.67+/2],
+                         [11911,2378.33, 2378.33-/2, 2378.33+/2],
+                         [11918,2383.67, 2383.67-/2, 2383.67+/2],
+                         [11920,2390.81, 2390.81-/2, 2390.81+/2],
+                         [11926,2400.11, 2400.11-/2, 2400.11+/2],
+                         [11929,2420.52, 2420.52-/2, 2420.52+/2],*/
+                         [11947,2449.08, 2449.08-39.13/2, 2449.08+39.13/2],
+                         [11950,2424.93, 2424.93-54.24/2, 2424.93+54.24/2],
+                         [11953,2415.14, 2415.14-51.43/2, 2415.14+51.43/2],
+                         [11957,2427.00, 2427.00-129.72/2, 2427.00+129.72/2],
+                         [11959,2419.21, 2419.21-48.01/2, 2419.21+48.01/2],
+                         [11964,2425.07, 2425.07-73.51/2, 2425.07+73.51/2],
+                         [11968,2436.39, 2436.39-60.77/2, 2436.39+60.77/2],
+                         [11973,2449.41, 2449.41-80.64/2, 2449.41+80.64/2],
+                         [11975,2424.53, 2424.53-51.64/2, 2424.53+51.64/2],
+                         [11978,2460.38, 2460.38-82.37/2, 2460.38+82.37/2],
+                         [11980,2396.84, 2396.84-83.49/2, 2396.84+83.49/2],
+                         [11982,2411.90, 2411.90-34.8/2, 2411.90+34.8/2],
+                         [11983,2366.89, 2366.89-70.67/2, 2366.89+70.67/2],
+                         [11992,2404.21, 2404.21-54.63/2, 2404.21+54.63/2],
+                         [12006,2407.85, 2407.85-52.43/2, 2407.85+52.43/2]
+           ]);
+           
+           // The intervals data as narrow lines (useful for showing raw source data)
+           var options = {
+               hAxis: {title: 'Run Number', minValue: 11830, maxValue: 12010, format:'0'},
+               vAxis: {title: 'CH2 drift time [ns]', minValue: 2300.0, maxValue: 2500.0},
+               series: [{'color': '#F911DD'}],
+               intervals: { style: 'sticks' },
+               legend: 'none',
+           };
+           
+                                                              
+           var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+                                                              
+           chart.draw(data, options);
+        }
+    </script>
+
+</head>
+
+<body>
+	<center><a href="https://userweb.jlab.org/~nathand/rgf/index.html"><img src="https://userweb.jlab.org/~nathand/rgf/img/title.png" alt="title" style="width:600px;height:150px;"></a></center>
+	<p> DMS CH2 Drift Time vs. Run Number </p>
+    
+	<center>
+        <div id="chart_div" style="width: 800px; height: 400px;"></div>
+    </center>
+    
+            
+            
+        </table>
+	</center>
+
+    
+
+</body>
+</html>

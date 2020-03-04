@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Run Group F Parameters and Analysis</title>
+	<style>
+		 p
+		 {
+		  font-family: Arial, Helvetica, sans-serif;
+		  color: Blue;
+		  background-color: White;
+		  margin: 0;
+		  font-style: italic;
+		  font-size: 30px;
+		  font-weight: bold;
+		 }
+		 div p
+		 {
+		  font-style: italic;
+		  font-size: 40px;
+		 }
+	 </style>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+           var data = new google.visualization.DataTable();
+           data.addColumn('number', 'run_number');
+           data.addColumn('number', 'pressure');
+           
+           data.addRows([
+                         [11684,765.7889],
+                         [11685,766.1759],
+                         [11801,766.1104],
+                         [11833,764.988],
+                         [11834,767.1864],
+                         [11836,767.1988],
+                         [11840,767.3303],
+                         [11841,767.3215],
+                         [11842,766.6868],
+                         [11847,765.9918],
+                         [11853,763.5781],
+                         [11855,763.3659],
+                         [11858,762.2268],
+                         [11862,762.2539],
+                         [11863,760.73],
+                         [11865,758.8034],
+                         [11866,758.897],
+                         [11871,757.1999],
+                         [11873,757.4093],
+                         [11877,755.8756],
+                         [11888,752.2559],
+                         [11892,751.0872],
+                         [11907,752.1374],
+                         [11911,750.1849],
+                         [11918,748.6235],
+                         [11920,750.5906],
+                         [11926,752.0662],
+                         [11929,754.6096],
+                         [11931,752.8373],
+                         [11933,752.5993],
+                         [11935,753.829],
+                         [11941,753.935],
+                         [11947,754.7542],
+                         [11950,755.2885],
+                         [11953,758.0428],
+                         [11957,761.2291],
+                         [11959,762.7215],
+                         [11964,762.9879],
+                         [11968,760.6861],
+                         [11973,760.6243],
+                         [11975,760.9697],
+                         [11978,759.8036],
+                         [11980,758.8131],
+                         [11982,758.054],
+                         [11983,754.6535],
+                         [11992,751.1358],
+                         [12006,747.257]
+           ]);
+           
+           // The intervals data as narrow lines (useful for showing raw source data)
+           var options = {
+               hAxis: {title: 'Run Number', minValue: 11830, maxValue: 12010, format:'0'},
+               vAxis: {title: 'Pressure [torr]', minValue: 740, maxValue: 770.0},
+               series: [{'color': '#F911DD'}],
+               legend: 'none',
+           };
+           
+                                                              
+           var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+                                                              
+           chart.draw(data, options);
+        }
+    </script>
+
+</head>
+
+<body>
+	<center><a href="https://userweb.jlab.org/~nathand/rgf/index.html"><img src="https://userweb.jlab.org/~nathand/rgf/img/title.png" alt="title" style="width:600px;height:150px;"></a></center>
+	<p> Pressure vs. Run Number </p>
+    
+	<center>
+        <div id="chart_div" style="width: 800px; height: 400px;"></div>
+    </center>
+    
+</body>
+</html>
