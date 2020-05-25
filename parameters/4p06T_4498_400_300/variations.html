@@ -22,6 +22,18 @@
             font-size: 20px;
         }
 	 </style>
+    
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <!-- Start here -->
     <style>
         body {font-family: "Times New Roman", Georgia, Serif;}
         h1, h2, h3, h4, h5, h6 {
@@ -40,22 +52,11 @@
     a { text-decoration: none; }
     a:hover{ color:blue; }
         </style>
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://userweb.jlab.org/~nathand/rgf/w3_style.css">
 
 </head>
-
 <body>
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
@@ -66,12 +67,12 @@
             <!-- Right-sided navbar links. Hide them on small screens -->
             <div class="w3-right w3-hide-small">
                 <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html" class="w3-bar-item w3-button">DMS</a>
-                <a href="https://userweb.jlab.org/~nathand/rgf/analysis/1pass.html" class="w3-bar-item w3-button">2.14 GeV Analysis</a>
-                <a href="https://userweb.jlab.org/~nathand/rgf/analysis/5pass.html" class="w3-bar-item w3-button">10.5 GeV Analysis</a>
+                <a href="https://userweb.jlab.org/~nathand/rgf/analysis/index.html" class="w3-bar-item w3-button">Data Analysis</a>
                 <a href="https://userweb.jlab.org/~nathand/rgf/parameters/index.html" class="w3-bar-item w3-button">Parameters</a>
             </div>
         </div>
     </div>
+    <!-- End here -->
 	<p> Run Group F Parameters </p>
 	<center>
      		<table style="width:70%" border="1"> 
@@ -129,6 +130,9 @@
     <hr>
     <p> Pressure Variations </p>
     <center>
+        <img src="figs/t_vs_r_pres.png" alt="t_vs_r_pres" style="width:300px;height:300px;">
+        <img src="figs/phi_vs_r_pres.png" alt="phi_vs_r_pres" style="width:300px;height:300px;">
+        <img src="figs/max_vs_r_pres.png" alt="max_vs_r_pres" style="width:300px;height:300px;">
         <div class="a">
         <table style="width:70%" border="1">
             <tr>
