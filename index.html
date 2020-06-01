@@ -19,108 +19,106 @@
 		  font-size: 40px;
 		 }
 	 </style>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+    <style>
+        * {box-sizing:border-box}
         
-        function drawChart() {
-            var data = new google.visualization.DataTable();
-            data.addColumn('number', 'run_number');
-            data.addColumn('number', 'drift_velocity');
-            data.addColumn({id:'i0', type:'number', role:'interval'});
-            data.addColumn({id:'i1', type:'number', role:'interval'});
-            
-            data.addRows([
-                          //[11678,      0.00256761, 0.00256761-0.000114942/2, 0.00256761+0.000114942/2],
-                          //[11684,      0.0025593, 0.0025593-0.000106633/2,   0.0025593+0.000106633/2],
-                          //[11685,      0.00260362, 0.00260362-0.000163102/2, 0.00260362+0.000163102/2],
-                          //[11801,      0.00258033, 0.00258033-0.000172512/2, 0.00258033+0.000172512/2],
-                          [11833,      0.00257808, 0.00257808-0.000100708/2, 0.00257808+0.000100708/2],
-                          [11834,      0.002548, 0.002548-0.000106871/2, 0.002548+0.000106871/2],
-                          [11836,      0.00261928, 0.00261928-0.000148465/2, 0.00261928+0.000148465/2],
-                          [11840,      0.00255248, 0.00255248-0.000172466/2, 0.00255248+0.000172466/2],
-                          [11841,      0.00253169, 0.00253169-0.0001272/2, 0.00253169+0.0001272/2],
-                          [11842,      0.00254899, 0.00254899-0.0000964037/2, 0.00254899+0.0000964037/2],
-                          [11847,      0.00250994, 0.00250994-0.00013212/2, 0.00250994+0.00013212/2],
-                          [11853,      0.00257657, 0.00257657-0.000134479/2, 0.00257657+0.000134479/2],
-                          [11855,      0.00253121, 0.00253121-0.000119626/2, 0.00253121+0.000119626/2],
-                          [11858,      0.00257401, 0.00257401-0.000130733/2, 0.00257401+0.000130733/2],
-                          [11862,      0.0025784, 0.0025784-0.00018224/2, 0.0025784+0.00018224/2],
-                          [11863,      0.00254987, 0.00254987-0.000175843/2, 0.00254987+0.000175843/2],
-                          [11865,      0.00259232, 0.00259232-0.000104463/2, 0.00259232+0.000104463/2],
-                          [11866,      0.00256159, 0.00256159-0.000128387/2, 0.00256159+0.000128387/2],
-                          [11871,      0.00254384, 0.00254384-0.000142882/2, 0.00254384+0.000142882/2],
-                          [11873,      0.00262813, 0.00262813-0.000117139/2, 0.00262813+0.000117139/2],
-                          [11877,      0.0025181, 0.0025181-0.000132752/2, 0.0025181+0.000132752/2],
-                          [11888,      0.00251652, 0.00251652-0.000123691/2, 0.00251652+0.000123691/2],
-                          [11892,      0.00264399, 0.00264399-0.000165984/2, 0.00264399+0.000165984/2],
-                          [11907,      0.0025563, 0.0025563-0.0000997798/2, 0.0025563+0.0000997798/2],
-                          [11911,      0.00259524, 0.00259524-0.000105591/2, 0.00259524+0.000105591/2],
-                          [11918,      0.00259524, 0.00259524-0.000105591/2, 0.00259524+0.000105591/2],
-                          [11920,      0.00261283, 0.00261283-0.000109811/2, 0.00261283+0.000109811/2],
-                          [11926,      0.00257662, 0.00257662-0.000113885/2, 0.00257662+0.000113885/2],
-                          [11929,      0.0025238, 0.0025238-0.000123493/2, 0.0025238+0.000123493/2],
-                          [11930,      0.00256919, 0.00256919-0.000129222/2, 0.00256919+0.000129222/2],
-                          [11933,      0.00255575, 0.00255575-0.000111651/2, 0.00255575+0.000111651/2],
-                          [11935,      0.00252449, 0.00252449-0.000160462/2, 0.00252449+0.000160462/2],
-                          [11941,      0.00254836, 0.00254836-0.000115685/2, 0.00254836+0.000115685/2],
-                          [11947,      0.00252329, 0.00252329-0.000103945/2, 0.00252329+0.000103945/2],
-                          [11950,      0.00253523, 0.00253523-0.000119483/2, 0.00253523+0.000119483/2],
-                          [11953,      0.00256087, 0.00256087-0.000115296/2, 0.00256087+0.000115296/2],
-                          [11957,      0.00252876, 0.00252876-0.000223341/2, 0.00252876+0.000223341/2],
-                          [11959,      0.00257859, 0.00257859-0.000115585/2, 0.00257859+0.000115585/2],
-                          [11964,      0.00256003, 0.00256003-0.000152467/2, 0.00256003+0.000152467/2],
-                          [11968,      0.00253160, 0.00253160-0.000113237/2, 0.00253160+0.000113237/2],
-                          [11973,      0.00251295, 0.00251295-0.000150344/2, 0.00251295+0.000150344/2],
-                          [11975,      0.00254213, 0.00254213-0.000117151/2, 0.00254213+0.000117151/2],
-                          [11978,      0.00247312, 0.00247312-0.000146628/2, 0.00247312+0.000146628/2],
-                          [11980,      0.00259998, 0.00259998-0.000160444/2, 0.00259998+0.000160444/2],
-                          [11982,      0.00256593, 0.00256593-0.000099686/2, 0.00256593+0.000099686/2],
-                          [11983,      0.00261172, 0.00261172-0.000133893/2, 0.00261172+0.000133893/2],
-                          [11992,      0.00254669, 0.00254669-0.000121993/2, 0.00254669+0.000121993/2],
-                          [12006,      0.00255383, 0.00255383-0.000109447/2, 0.00255383+0.000109447/2],
-                          [12016,      0.00251418, 0.00251418-0.000122754/2, 0.00251418+0.000122754/2],
-                          [12018,      0.00251452, 0.00251452-0.000100533/2, 0.00251452+0.000100533/2],
-                          [12021,      0.00249132, 0.00249132-0.000137763/2, 0.00249132+0.000137763/2],
-                          [12024,      0.00247260, 0.00247260-0.000093138/2, 0.00247260+0.000093138/2],
-                          [12026,      0.00250161, 0.00250161-0.000106577/2, 0.00250161+0.000106577/2],
-                          [12034,      0.00245857, 0.00245857-0.000117175/2, 0.00245857+0.000117175/2],
-                          [12038,      0.00250758, 0.00250758-0.000127812/2, 0.00250758+0.000127812/2],
-                          [12043,      0.00252409, 0.00252409-0.000124502/2, 0.00252409+0.000124502/2],
-                          [12049,      0.00257296, 0.00257296-0.000110137/2, 0.00257296+0.000110137/2],
-                          [12055,      0.00256059, 0.00256059-0.000112491/2, 0.00256059+0.000112491/2],
-                          [12062,      0.00256373, 0.00256373-0.000102078/2, 0.00256373+0.000102078/2],
-                          [12065,      0.00259513, 0.00259513-0.000109622/2, 0.00259513+0.000109622/2],
-                          [12069,      0.00251200, 0.00251200-0.000148064/2, 0.00251200+0.000148064/2],
-                          [12071,      0.00257036, 0.00257036-0.000100323/2, 0.00257036+0.000100323/2],
-                          [12078,      0.00252627, 0.00252627-0.000078994/2, 0.00252627+0.000078994/2],
-                          [12086,      0.00251192, 0.00251192-0.000100243/2, 0.00251192+0.000100243/2],
-                          [12093,      0.00249004, 0.00249004-0.000097743/2, 0.00249004+0.000097743/2],
-                          [12095,      0.00251587, 0.00251587-0.000134573/2, 0.00251587+0.000134573/2],
-                          [12097,      0.00250063, 0.00250063-0.000111418/2, 0.00250063+0.000111418/2],
-                          [12103,      0.00253641, 0.00253641-0.000102886/2, 0.00253641+0.000102886/2],
-                          [12107,      0.00250827, 0.00250827-0.000103724/2, 0.00250827+0.000103724/2],
-                          [12111,      0.00255813, 0.00255813-0.000082311/2, 0.00255813+0.000082311/2],
-                          //[12127,      0.00117925, 0.00117925-0.000156992/2, 0.00117925+0.000156992/2],
-                          //[12139,      0.00254460, 0.00254460-0.000201524/2, 0.00254460+0.000201524/2]
-                          ]);
-                          
-                          // The intervals data as narrow lines (useful for showing raw source data)
-                          var options = {
-                              hAxis: {title: 'Run Number', minValue: 11830, maxValue: 12110, format:'0'},
-                              vAxis: {title: 'Drift Velocity [cm/ns]', minValue: 0.00245, maxValue: 0.00275},
-                              series: [{'color': '#F911DD'}],
-                              intervals: { style: 'sticks' },
-                              legend: 'none',
-                          };
-                          
-                          
-                          var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
-                          
-                          chart.draw(data, options);
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
         }
-    </script>
+    
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: blue;
+        font-weight: bold;
+        font-size: 28px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+        right: -30px;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    .prev {
+        left: -30px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: black;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    </style>
 
     <!-- Start here -->
     <style>
@@ -155,6 +153,7 @@
             </div>
             <!-- Right-sided navbar links. Hide them on small screens -->
             <div class="w3-right w3-hide-small">
+                <a href="https://userweb.jlab.org/~nathand/rgf/sim/index.html" class="w3-bar-item w3-button">Simulation</a>
                 <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html" class="w3-bar-item w3-button">DMS</a>
                 <a href="https://userweb.jlab.org/~nathand/rgf/analysis/index.html" class="w3-bar-item w3-button">Data Analysis</a>
                 <a href="https://userweb.jlab.org/~nathand/rgf/parameters/index.html" class="w3-bar-item w3-button">Parameters</a>
@@ -168,80 +167,67 @@
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
     <!-- End here -->
-    <p> <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html">DMS Data </a></p>
-    <center><div id="chart_div" style="width: 800px; height: 400px;"></div></center>
-    
-	<p> Run Group F Analysis </p>
-	<center>
-     <table style="width:30%" border="1"> 
-        <tr> 
-            <td>Beam Energy</td>
-            <td><a href="https://userweb.jlab.org/~nathand/rgf/analysis/1pass.html">2.14 GeV</a></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><a href="https://userweb.jlab.org/~nathand/rgf/analysis/5pass.html">10.4 GeV</a></td>
-        </tr>
-
-    </table>
-	</center>
-
-    <p> Run Group F Parameters </p>
-    <center>
-        <table style="width:70%" border="1">
-            <tr>
-                <th>Solenoid</th>
-                <th>V_cathode</th>
-                <th>V_GEMs</th>
-                <th>V_transfer</th>
-                <th>Run numbers</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>4.06 T</td>
-                <td>-4498V</td>
-                <td>-400</td>
-                <td>-300</td>
-                <td></td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4498_400_300/index.html">parameters</a></td>
-            </tr>
-            <tr>
-                <td>4 T</td>
-                <td>-4500V</td>
-                <td>-380</td>
-                <td>-300</td>
-                <td>11626, 11629-11676</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_380_300/index.html">parameters</a></td>
-            </tr>
-            <tr><td></td>
-                <td>-4500V</td>
-                <td>-400</td>
-                <td>-400</td>
-                <td>11677-11871</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_40_400/index.html">parameters</a></td>
-            </tr>
-            <tr><td></td>
-                <td>-4060V</td>
-                <td>-380</td>
-                <td>-300</td>
-                <td>11623-11624</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4060_380_300/index.html">parameters</a></td>
-            </tr>
-            <tr>
-                <td>4.5 T</td>
-                <td>-4500 V</td>
-                <td>-380</td>
-                <td>-300</td>
-                <td>11626, 11628</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p5T_4500_380_300/index.html">parameters</a></td>
-            </tr>
+    <div class="w3-content" style="max-width:900px">
+        <div class="horizontalgap" style="width:100px"></div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <a href="https://userweb.jlab.org/~nathand/rgf/sim/index.html"><img src="img/sim.png" style="width:100%"></a>
+            </div>
+            <div class="mySlides fade">
+                <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html"><img src="img/dms.png" style="width:100%"></a>
+            </div>
             
-        </table>
-    </center>
+            <div class="mySlides fade">
+                <a href="https://userweb.jlab.org/~nathand/rgf/parameters/index.html"><img src="img/para.png" style="width:100%"></a>
+            </div>
+            
+            <div class="mySlides fade">
+                <a href="https://userweb.jlab.org/~nathand/rgf/analysis/index.html"><img src="img/ana.png" style="width:100%"></a>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+        </script>
+        <hr>
+        <!-- End page content -->
+    </div>
 	
 
 

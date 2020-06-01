@@ -95,11 +95,55 @@
         }
     </script>
 
+    <!-- Start here -->
+    <style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    h7 {
+        font-family: "Bodoni 72 Smallcaps";
+        letter-spacing: 2px;
+        font-style:italic;
+    }
+    h8 {
+        font-family: "Snell Roundhand";
+        letter-spacing: 2px;
+    }
+    a { text-decoration: none; }
+    a:hover{ color:blue; }
+        </style>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://userweb.jlab.org/~nathand/rgf/w3_style.css">
+                
 </head>
-
 <body>
-	<center><a href="https://userweb.jlab.org/~nathand/rgf/index.html"><img src="https://userweb.jlab.org/~nathand/rgf/img/title.png" alt="title" style="width:600px;height:150px;"></a></center>
-	<p> Pressure vs. Run Number </p>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+            <div class="w3-left w3-bar-item w3-text-blue-grey">
+                <a href="https://userweb.jlab.org/~nathand/rgf/index.html"><img src="https://userweb.jlab.org/~nathand/rgf/img/title.png" alt="title" style="width:600px;height:150px;"></a>
+            </div>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="https://userweb.jlab.org/~nathand/rgf/sim/index.html" class="w3-bar-item w3-button">Simulation</a>
+                <a href="https://userweb.jlab.org/~nathand/rgf/dms/index.html" class="w3-bar-item w3-button">DMS</a>
+                <a href="https://userweb.jlab.org/~nathand/rgf/analysis/index.html" class="w3-bar-item w3-button">Data Analysis</a>
+                <a href="https://userweb.jlab.org/~nathand/rgf/parameters/index.html" class="w3-bar-item w3-button">Parameters</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!-- End here -->
+    <p> Pressure vs. Run Number </p>
     
 	<center>
         <div id="chart_div" style="width: 800px; height: 400px;"></div>
