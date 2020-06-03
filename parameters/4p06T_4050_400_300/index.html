@@ -99,7 +99,7 @@
 		    <th>Run numbers</th>
 		<tr> 
 		    <td>4.06 T</td>
-		    <td>-4498V</td>
+		    <td>-4050V</td>
 		    <td>-400</td>
 		    <td>-300</td>
 		    <td></td>
@@ -110,22 +110,23 @@
     <br />
     <br />
     <center><div class="b">Pressure = 760 torr | Gas-Mixture = 80:20 He:CO2 | Temp = 293 K
-    <br />
-    <a href="variations.html">Effects of varying these values on the parameters</a>
     </div></center>
     <hr>
     <center>
         <p>Drift times vs r and Drift angles vs r</p>
-        <img src="figs/t_vs_r.png" alt="t vs r" style="width:400px;height:400px;">
-        <img src="figs/phi_vs_r.png" alt="phi vs r" style="width:400px;height:400px;">
-        <p>Parameter fits</p>
-        <img src="figs/parameters.png" alt="parameters" style="width:800px;height:400px;">
+        <img src="figs/t_vs_r_4050V.png" alt="t vs r" style="width:400px;height:400px;">
+            <img src="figs/phi_vs_r_4050V.png" alt="phi vs r" style="width:400px;height:400px;">
+                <p>Parameter fits</p>
+                <img src="figs/parameters_4050V.png" alt="parameters" style="width:800px;height:400px;">
     </center>
+    <hr>
+    
     <div class="b">
     The drift time fit equation has the form:
     \begin{equation}
     t_d(r,z) = a_t(z) + b_t(z) \left[ \frac{1}{2} + \frac{r_{\mathrm{min}}^2 - r_{\mathrm{max}}^2 + \sqrt{4(0.1+c^2_t(z))(r_{\mathrm{max}}^2 + r_{\mathrm{min}}^2 - r^2) + (r_{\mathrm{max}}^2 - r_{\mathrm{min}}^2 - 0.1 - c^2_t(z))^2}}{2(0.1+c^2_t(z))} \right] + t_{\mathrm{gap}}
     \end{equation}
+    <br />
     where $r_{\mathrm{min}} =$ 3.0 cm, $r_{\mathrm{max}}$ = 7.0 cm, and
     \begin{equation}
     a_t(z) = a_{t,0} + a_{t,1}z^2 + a_{t,2} z^4
@@ -141,20 +142,22 @@
     $t_{\mathrm{gap}}$ = 778.91 ns<br />
     
 <br />
-$a_{t,0}$ = -0.467801<br />
-$a_{t,1}$ = 0.00261206<br />
-$a_{t,2}$ = -6.42754e-06<br />
+$a_{t,0}$ = -1.72461<br />
+$a_{t,1}$ = 0.00108739<br />
+$a_{t,2}$ = 2.37158e-05<br />
 <br />
-$b_{t,0}$ = 3075.18<br />
-$b_{t,1}$ = -0.0224507<br />
-$b_{t,2}$ = -0.000279326<br />
+$b_{t,0}$ = 3114.69<br />
+$b_{t,1}$ = -0.0249262<br />
+$b_{t,2}$ = -0.000462183<br />
 <br />
-$c_{t,0}$ = -0.294902<br />
-$c_{t,1}$ = 0.00224941<br />
-$c_{t,2}$ = -3.96523e-06<br />
+$c_{t,0}$ = -0.000797907<br />
+$c_{t,1}$ = -0.000165345<br />
+$c_{t,2}$ = 4.66965e-07<br />
 <br />
 <hr>
 The drift angle fit equation has the form:
+<br />
+<br />
 \begin{equation}
 \phi_d(r,z) = a_{\phi}(z) + b_{\phi}(z) \ln\left( \frac{r_{\mathrm{max}}}{r} \right) + c_{\phi}(z) \left( \frac{1}{r^2} - \frac{1}{r_{\mathrm{max}}^2} \right) + \phi_{\mathrm{gap}}
 \end{equation}
@@ -176,24 +179,15 @@ $a_{\phi,0}$ = 0.0<br />
 $a_{\phi,1}$ = 0.0<br />
 $a_{\phi,2}$ = 0.0<br />
 <br />
-$b_{\phi,0}$ = 1.04506<br />
-$b_{\phi,1}$ = -6.23195e-05<br />
-$b_{\phi,2}$ = 1.84109e-08<br />
+$b_{\phi,0}$ = 1.00636<br />
+$b_{\phi,1}$ = 5.99241e-05<br />
+$b_{\phi,2}$ = -2.71051e-07<br />
 <br />
-$c_{\phi,0}$ = -0.426617<br />
-$c_{\phi,1}$ = 0.000561458<br />
-$c_{\phi,2}$ = -1.16527e-06<br />
+$c_{\phi,0}$ = -0.312127<br />
+$c_{\phi,1}$ = -0.000814363<br />
+$c_{\phi,2}$ = 1.8609e-06<br />
 <br />
 </div>
 <hr>
-
-<center>
-<p>Drift Times</p>
-<img src="figs/drift_times.png" alt="drift times" style="width:600px;height:600px;">
-<p>Drift Angles</p>
-<img src="figs/drift_angles.png" alt="drift angles" style="width:600px;height:600px;">
-</center>
-
-
 </body>
 </html>
