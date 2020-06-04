@@ -18,11 +18,15 @@
 		  font-style: italic;
 		  font-size: 40px;
 		 }
-        div.a {
+         div.a
+         {
+             font-size: 18px;
+         }
+        div.b
+        {
             font-size: 20px;
         }
 	 </style>
-    
     <script>
         MathJax = {
             tex: {
@@ -55,7 +59,7 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://userweb.jlab.org/~nathand/rgf/w3_style.css">
-
+                
 </head>
 <body>
     <!-- Navbar (sit on top) -->
@@ -93,10 +97,9 @@
 		    <th>V_GEMs</th>
 		    <th>V_transfer</th>
 		    <th>Run numbers</th>
-        </tr>
 		<tr> 
 		    <td>4.06 T</td>
-		    <td>-4498V</td>
+		    <td>-4450V</td>
 		    <td>-400</td>
 		    <td>-300</td>
 		    <td></td>
@@ -105,24 +108,86 @@
     </table>
 	</center>
     <br />
-    <p> Pressure Variations </p>
-    <center>
-        <img src="figs/t_vs_r_pres.png" alt="t_vs_r_pres" style="width:400px;height:300px;">
-        <img src="figs/phi_vs_r_pres.png" alt="phi_vs_r_pres" style="width:400px;height:300px;">
-        <img src="figs/max_vs_pres.png" alt="max_vs_r_pres" style="width:600px;height:300px;">
-    </center>
-        
     <br />
+    <center><div class="b">Pressure = 760 torr | Gas-Mixture = 80:20 He:CO2 | Temp = 293 K
+    </div></center>
     <hr>
-    <p> Gas-Mixture Variations </p>
-    <br />
     <center>
-        <img src="figs/t_vs_r_mix.png" alt="t_vs_r_mix" style="width:400px;height:300px;">
-        <img src="figs/phi_vs_r_mix.png" alt="phi_vs_r_mix" style="width:400px;height:300px;">
-        <img src="figs/max_vs_mix.png" alt="max_vs_r_mix" style="width:600px;height:300px;">
+        <p>Drift times vs r and Drift angles vs r</p>
+        <img src="figs/t_vs_r_4450V.png" alt="t vs r" style="width:400px;height:400px;">
+            <img src="figs/phi_vs_r_4450V.png" alt="phi vs r" style="width:400px;height:400px;">
+                <p>Parameter fits</p>
+                <img src="figs/parameters_4450V.png" alt="parameters" style="width:800px;height:400px;">
     </center>
-        <br />
-        <hr>
+    <hr>
+    
+    <div class="b">
+    The drift time fit equation has the form:
+    \begin{equation}
+    t_d(r,z) = a_t(z) + b_t(z) \left[ \frac{1}{2} + \frac{r_{\mathrm{min}}^2 - r_{\mathrm{max}}^2 + \sqrt{4(0.1+c^2_t(z))(r_{\mathrm{max}}^2 + r_{\mathrm{min}}^2 - r^2) + (r_{\mathrm{max}}^2 - r_{\mathrm{min}}^2 - 0.1 - c^2_t(z))^2}}{2(0.1+c^2_t(z))} \right] + t_{\mathrm{gap}}
+    \end{equation}
+    <br />
+    where $r_{\mathrm{min}} =$ 3.0 cm, $r_{\mathrm{max}}$ = 7.0 cm, and
+    \begin{equation}
+    a_t(z) = a_{t,0} + a_{t,1}z^2 + a_{t,2} z^4
+    \end{equation}
+    \begin{equation}
+    b_t(z) = b_{t,0} + b_{t,1}z^2 + b_{t,2} z^4
+    \end{equation}
+    \begin{equation}
+    c_t(z) = c_{t,0} + c_{t,1}z^2 + c_{t,2} z^4
+    \end{equation}
+    
+    
+    $t_{\mathrm{gap}}$ = 778.91 ns<br />
+    
+<br />
+$a_{t,0}$ = -1.72461<br />
+$a_{t,1}$ = 0.00108739<br />
+$a_{t,2}$ = 2.37158e-05<br />
+<br />
+$b_{t,0}$ = 3114.69<br />
+$b_{t,1}$ = -0.0249262<br />
+$b_{t,2}$ = -0.000462183<br />
+<br />
+$c_{t,0}$ = -0.000797907<br />
+$c_{t,1}$ = -0.000165345<br />
+$c_{t,2}$ = 4.66965e-07<br />
+<br />
+<hr>
+The drift angle fit equation has the form:
+<br />
+<br />
+\begin{equation}
+\phi_d(r,z) = a_{\phi}(z) + b_{\phi}(z) \ln\left( \frac{r_{\mathrm{max}}}{r} \right) + c_{\phi}(z) \left( \frac{1}{r^2} - \frac{1}{r_{\mathrm{max}}^2} \right) + \phi_{\mathrm{gap}}
+\end{equation}
+where $r_{\mathrm{min}} =$ 3.0 cm, $r_{\mathrm{max}}$ = 7.0 cm, and
+\begin{equation}
+a_{\phi}(z) = a_{\phi,0} + a_{\phi,1}z^2 + a_{\phi,2} z^4
+\end{equation}
+\begin{equation}
+b_{\phi}(z) = b_{\phi,0} + b_{\phi,1}z^2 + b_{\phi,2} z^4
+\end{equation}
+\begin{equation}
+c_{\phi}(z) = c_{\phi,0} + c_{\phi,1}z^2 + c_{\phi,2} z^4
+\end{equation}
 
+$\phi_{\mathrm{gap}}$ = 0.1476 rad<br />
+
+<br />
+$a_{\phi,0}$ = 0.0<br />
+$a_{\phi,1}$ = 0.0<br />
+$a_{\phi,2}$ = 0.0<br />
+<br />
+$b_{\phi,0}$ = 1.00636<br />
+$b_{\phi,1}$ = 5.99241e-05<br />
+$b_{\phi,2}$ = -2.71051e-07<br />
+<br />
+$c_{\phi,0}$ = -0.312127<br />
+$c_{\phi,1}$ = -0.000814363<br />
+$c_{\phi,2}$ = 1.8609e-06<br />
+<br />
+</div>
+<hr>
 </body>
 </html>
