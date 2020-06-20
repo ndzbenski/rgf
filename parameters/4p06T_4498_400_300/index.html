@@ -6,7 +6,7 @@
 		 p
 		 {
 		  font-family: Arial, Helvetica, sans-serif;
-		  color: Blue;
+		  color: green;
 		  background-color: White;
 		  margin: 0;
 		  font-style: italic;
@@ -54,6 +54,15 @@
         letter-spacing: 2px;
     }
     a { text-decoration: none; }
+    a:hover{ color:blue; }
+    a.nav:link, a.nav:visited{
+        color:blue;
+        text-decoration: none;
+    }
+    a.nav:hover, a.nav:active{
+        color:red;
+        text-decoration: none;
+    }
     a:hover{ color:blue; }
         </style>
     <meta charset="UTF-8">
@@ -111,7 +120,7 @@
     <br />
     <center><div class="b">Pressure = 760 torr | Gas-Mixture = 80:20 He:CO2 | Temp = 293 K
     <br />
-    <a href="variations.html">Effects of varying these values on the parameters</a>
+    <a class="nav" href="variations.html">Effects of varying these values on the parameters</a>
     </div></center>
     <hr>
     <center>

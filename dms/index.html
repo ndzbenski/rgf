@@ -6,7 +6,7 @@
 		 p
 		 {
 		  font-family: Arial, Helvetica, sans-serif;
-		  color: Blue;
+		  color: green;
 		  background-color: White;
 		  margin: 0;
 		  font-style: italic;
@@ -140,6 +140,15 @@
     }
     a { text-decoration: none; }
     a:hover{ color:blue; }
+    a.nav:link, a.nav:visited{
+        color:blue;
+        text-decoration: none;
+    }
+    a.nav:hover, a.nav:active{
+        color:red;
+        text-decoration: none;
+    }
+    a:hover{ color:blue; }
         </style>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -178,9 +187,16 @@
 	<center>
         <div id="chart_div" style="width: 800px; height: 400px;"></div>
     </center>
-    <p><a href="ch1_time.html">CH1 Drift time vs. Run Number</a></p>
-    <p><a href="ch2_time.html">CH2 Drift time vs. Run Number</a></p>
-    <p><a href="pressure.html">Pressure vs. Run Number</a></p>
+    <p>Other Plots</p>
+    <center>
+        <a style="font-size:30px" class="nav" href="ch1_time.html">CH1 Drift time vs. Run Number</a><br />
+        <a style="font-size:30px" class="nav" href="ch2_time.html">CH2 Drift time vs. Run Number</a><br />
+        <a style="font-size:30px" class="nav" href="pressure.html">Pressure vs. Run Number</a><br />
+    </center>
+    <br />
+    <br />
+    <hr>
+    <p>Data</p>
     <center>
      	<table style="width:99%" border="1">
             <tr>

@@ -6,7 +6,7 @@
 		 p
 		 {
 		  font-family: Arial, Helvetica, sans-serif;
-		  color: Blue;
+		  color: green;
 		  background-color: White;
 		  margin: 0;
 		  font-style: italic;
@@ -22,10 +22,10 @@
          {
              font-size: 18px;
          }
-    div.b
-    {
-        font-size: 24px;
-    }
+        div.b
+        {
+            font-size: 24px;
+        }
 	 </style>
     <script>
         MathJax = {
@@ -44,18 +44,25 @@
             font-family: "Playfair Display";
             letter-spacing: 5px;
         }
-    h7 {
-        font-family: "Bodoni 72 Smallcaps";
-        letter-spacing: 2px;
-        font-style:italic;
-    }
-    h8 {
-        font-family: "Snell Roundhand";
-        letter-spacing: 2px;
-    }
-    a { text-decoration: none; }
-    a:hover{ color:blue; }
-        </style>
+        h7 {
+            font-family: "Bodoni 72 Smallcaps";
+            letter-spacing: 2px;
+            font-style:italic;
+        }
+        h8 {
+            font-family: "Snell Roundhand";
+            letter-spacing: 2px;
+        }
+        a.nav:link, a.nav:visited{
+            color:blue;
+            text-decoration: none;
+        }
+        a.nav:hover, a.nav:active{
+            color:red;
+            text-decoration: none;
+        }
+        a:hover{ color:blue; }
+    </style>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://userweb.jlab.org/~nathand/rgf/w3_style.css">
@@ -88,6 +95,11 @@
     <br />
     <br />
     <!-- End here -->
+    <p>Garfield++ Drift electron Analysis </p>
+    <center>
+        <a style="font-size:20px" class="nav" href="4p06T_4400_400_300/variations.html">Pressure, mixture, and field variations for -4400 V in the drift region</a><br />
+        <a style="font-size:20px" class="nav" href="4p06T_4498_400_300/variations.html">Pressure and mixture variations for -4498 V in the drift region</a>
+    </center>
 	<p> Run Group F Parameters </p>
     <center>
         <table style="width:70%" border="1">
@@ -105,7 +117,7 @@
                 <td>-400</td>
                 <td>-300</td>
                 <td></td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4400_400_300/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4400_400_300/index.html">parameters</a></td>
             </tr>
             <tr>
                 <td>4.06 T</td>
@@ -113,7 +125,7 @@
                 <td>-400</td>
                 <td>-300</td>
                 <td></td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4450_400_300/index.html">parameters</a></td>
+                <td><a  class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4450_400_300/index.html">parameters</a></td>
             </tr>
             <tr>
                 <td>4.06 T</td>
@@ -121,7 +133,7 @@
                 <td>-400</td>
                 <td>-300</td>
                 <td></td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4498_400_300/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4p06T_4498_400_300/index.html">parameters</a></td>
             </tr>
             <tr>
                 <td>4 T</td>
@@ -129,21 +141,21 @@
                 <td>-380</td>
                 <td>-300</td>
                 <td>11626, 11629-11676</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_380_300/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_380_300/index.html">parameters</a></td>
             </tr>
             <tr><td></td>
                 <td>-4500V</td>
                 <td>-400</td>
                 <td>-400</td>
                 <td>11677-11871</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_40_400/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4500_40_400/index.html">parameters</a></td>
             </tr>
             <tr><td></td>
                 <td>-4060V</td>
                 <td>-380</td>
                 <td>-300</td>
                 <td>11623-11624</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4060_380_300/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4T_4060_380_300/index.html">parameters</a></td>
             </tr>
             <tr>
                 <td>4.5 T</td>
@@ -151,7 +163,7 @@
                 <td>-380</td>
                 <td>-300</td>
                 <td>11626, 11628</td>
-                <td><a href="https://userweb.jlab.org/~nathand/rgf/parameters/4p5T_4500_380_300/index.html">parameters</a></td>
+                <td><a class="nav" href="https://userweb.jlab.org/~nathand/rgf/parameters/4p5T_4500_380_300/index.html">parameters</a></td>
             </tr>
         </table>
     </center>
