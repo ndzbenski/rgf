@@ -88,21 +88,21 @@
     <br />
     <!-- End here -->
 	<p> GEMC Simulation Instructions </p>
-    The current production tag for the JLab Common Environment consists of:
-    <br />BANKS      version:  1.4
-    <br />CCDB      version:  1.06.02
-    <br />CLHEP      version:  2.4.0.4
-    <br />EVIO      version:  5.1
-    <br />GEANT4      version:  4.10.04.p02
-    <br />GEMC      version:  2.7
-    <br />JANA      version:  0.8.0
-    <br />MLIBRARY      version:  1.3
-    <br />MYSQL      installed in  /site/12gev_phys/2.3/Linux_CentOS7.7.1908-x86_64-gcc4.8.5/mysql/lib
-    <br />QT        version:  5.10.1
-    <br />ROOT      version:  6.14.04
-    <br />SCONS      version:  1.7
-    <br />XERCESC      version:  3.2.2
-    You will need everything in that list for GEMC to run, so I recommend you build your development version on the JLab farm. In order to get the version of GEMC with the current version of the RTPC, you should go to the GitHub repository and clone it. 
+    The documentation and release information for GEMC can be found at this website: <a class="nav" href="https://gemc.jlab.org/gemc/html/index.html">gemc.jlab.org/gemc/html/index.html</a>
+    <br /><br />
+    The most current development version of RTPC in GEMC is located at <code>/work/clas12/bonus/gemc/devel/</code>, which as of 12 July 2020 differs from the official GEMC release in the expressions/parameters for drift electron behavior. In this directory you can find the gcard to run gemc with the RGF configuration (<code>rgf_spring2020_lund.gcard</code>). This gcard runs with an input from an external event generator (<code>lund/ep_34118_20.lund</code>), which was updated May 2020. This lund file has one primary ep event and 20 additional protons to act as "background." The RTPC hit process class in the GEMC source code takes those background protons and shifts the ionization electron times randomly between -8 and 8 µsec.
+    <br /><br />
+    There are a few files in the GEMC source directory that are important specifically for RTPC. That is: <code>source/hitprocess/clas12/rtpc_hitprocess.h</code> and <code>source/hitprocess/clas12/rtpc_hitprocess.cc</code>, where the Garfield++ generated parameters have been implemented. Whenever you change something in the source directory, you have to recompile with scons. In <code>/work/clas12/bonus/gemc/devel/source/</code>, run <br />
+    <code>> scons OPT=1 -j4</code>
+    <br /><br />
+    To update the Official GEMC source code, you need to pull the latest version from the GitHub repo at <a class="nav" href="https://github.com/gemc/source">github.com/gemc/source</a>, update the relevant code and create a pull request.
+    <br /><br />
+    If you want to change the RTPC geometry, the files are located in <code>/work/clas12/bonus/gemc/devel/detectors/clas12/rtpc/</code>, which contains the Perl files for the geometry, materials, hits, and banks. If you modify any of these, you have to reconfigure the group with <br />
+    <code>> ./rtpc.pl config.dat</code>
+    <br /><br />
+    To update the Official GEMC detector code, you need to pull the latest version from the GitHub repo at <a class="nav" href="https://github.com/gemc/detectors">github.com/gemc/detectors</a>, update the relevant code and create a pull request.
+    <br /><br />
+    For complete instructions on creating a proper pull request from the Official GEMC GitHub repo, visit <a class="nav" href="https://gemc.jlab.org/gemc/html/contributing.html">gemc.jlab.org/gemc/html/contributing.html</a>
     
     
 </body>

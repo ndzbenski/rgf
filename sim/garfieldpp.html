@@ -99,18 +99,86 @@
     
     <code>
     $ git clone https://github.com/ndzbenski/garfield.git <br />
-    $ setenv GARFIELD_HOME your_dir/garfield <br />
+    $ setenv GARFIELD_HOME [your_dir]/garfield <br />
+    </code>
+    where <code>[your_dir]</code> is the place you put the Garfield++ files.<br />
+    <code>
     $ cd GARFIELF_HOME <br />
     $ cmake -DWITH_DOCS=OFF -DWITH_EXAMPLES=OFF $GARFIELD_HOME <br />
     $ make -j [number of cores] <br />
+    </code>
+    where <code>[number of cores]</code> is the number of cores in your computer.<br />
+    <code>
     $ make install <br /><br />
     </code>
-    There's a directory called <code>bonus</code> that has within it the BONuS12 RTPC drift region (called <code>rtpc</code>), that same drift region where you can see the drift lines of the electrons (called <code>viewdrift_rtpc</code>),the DMS (called <code>dms</code>), and a one-GEM region that you have to modify for each region (called <code>gem_rtpc</code>). <br /><br />
+    There's a directory called <code>bonus</code> that has within it the BONuS12 RTPC drift region (called <code>rtpc</code>), that same drift region where you can see the drift lines of the electrons (called <code>viewdrift_rtpc</code>),the DMS (called <code>dms</code>), and a one-GEM region that you have to modify for each region (called <code>gem_rtpc</code>).
+    <br /><br /><hr>
     
-    In the GEM directory, to change the drift region geometry for 70 &lt; r &lt; 73 cm, 73 &lt; r &lt; 76 cm, or 76 &lt; r &lt; 80 cm
-    
-    <br /><br />In order to modify the RTPC geometry or potential, you'll need the following two packages:<br />
+    <p>Simulating the RTPC drift region</p>
+    In order to modify the RTPC geometry or potential, you'll need the following two packages:<br />
     <a class="nav" href="http://gmsh.info">GMSH</a>: this creates the 3D finite element mesh<br />
-    <a class="nav" href="http://www.elmerfem.org/">ElmerSolver</a>: this will solve the 
+    <a class="nav" href="http://www.elmerfem.org/">ElmerSolver</a>: this will solve the EM equations on the mesh<br />
+    <br /><br />
+    Make sure that you create aliases in your shell startup scripts pointing to GMSH and ElmerSolver (located in the Elmer directory under install/bin/ElmerSolver). You only have to do the following if you change the overall geometry of the RTPC. Here's a list of files in the <code>rtpc</code> directory:
+    <center>
+        <table>
+            <tr style="outline: thin solid"><td style="outline: thin solid" valign="top"><code>RTPC.geo</code></td>
+                <td>geometry file used to define the Finite Element Method (FEM).</td>
+            </tr>
+            <tr style="outline: thin solid"><td style="outline: thin solid" valign="top"><code>RTPC.msh</code></td>
+                <td>mesh file contains all the finite elements in the geometry.</td>
+            </tr>
+            <tr style="outline: thin solid"><td style="outline: thin solid" valign="top"><code>RTPC/mesh.boundary</code>,<br /> <code>RTPC/mesh.elements</code>, <br /><code>RTPC/mesh.header, <br />and
+                <code>RTPC/mesh.nodes</code></td>
+                <td>These files will be read by ElmerSolver to create the electric file and later by Garfield.</td>
+            </tr>
+            <tr style="outline: thin solid"><td style="outline: thin solid" valign="top"><code>RTPC.sif</code></td>
+            <td>the file defining the physics to apply to the mesh. The boundary conditions (values of potentials) are implemented there.</td>
+            </tr>
+            <tr style="outline: thin solid"><td  style="outline: thin solid" valign="top"><code>RTPC/RTPC.result</code>, <br />and <code>RTPC/RTPC.ep</code></td>
+                <td>the .result file is the only one that'll be relevant for Garfield++ simulations. The .ep file is read into a visualization program.</td>
+            </tr>
+            <tr style="outline: thin solid"><td  style="outline: thin solid" valign="top"><code>RTPC.C</code>, <br />and <code>makefile</code></td>
+                <td>these are the files used for the actual Garfield++ simulation.</td>
+            </tr>
+        </table>
+    </center>
+    
+    <br />If you need to alter the geometry of the RTPC, modifity <code>RTPC.geo</code>, then run:
+    <br /><code>$ gmsh RTPC.geo -3 -order 2</code>
+    <br /><code>$ ElmerGrid 14 2 RTPC.msh -autoclean</code>
+    <br /><code>$ ElmerSolver RTPC.sif</code>
+    <br /><code>$ make</code>
+    <br /><code>$ ./garf_RTPC [number of events]</code>
+    
+    <br /><br />If you're only modifying the potential across the drift region, modifity <code>RTPC.sif</code>, then run:
+    <br /><code>$ ElmerSolver RTPC.sif</code>
+    <br /><code>$ make</code>
+    <br /><code>$ ./garf_RTPC [number of events]</code>
+    
+    <br /><br />If you're only changing the gas mixture, pressure, temperature in the drift region, modifity <code>RTPC.C</code>, then run:
+    <br /><code>$ make</code>
+    <br /><code>$ ./garf_RTPC [number of events]</code>
+    <br /><br />where <code>[number of events]</code> is the number of events you want to simulate.
+    
+    <br /><br /><hr>
+    
+    
+    <p> Simulating the GEM region (gem_rtpc)</p>
+    In the GEM directory, to change the drift region geometry for 7.0 &lt; r &lt; 7.3 cm, 7.3 &lt; r &lt; 7.6 cm, or 7.6 &lt; r &lt; 8.0 cm, you'll need to change the region number in the argument to executing the function. To execute, run
+        <br />
+    <code>
+        $./garf_rtpc [region number] <br />
+    </code>
+    where <code>[region number]</code> would be
+    <center>
+        <table>
+            <tr><th>Region Number</th><th>Region range</th></tr>
+            <tr><td>1</td><td>7.0 &lt; r &lt; 7.3 cm</td></tr>
+            <tr><td>2</td><td>7.3 &lt; r &lt; 7.6 cm</td></tr>
+            <tr><td>3</td><td>7.6 &lt; r &lt; 8.0 cm</td></tr>
+        </table>
+    </center>
+    <br /><br /><hr>
 </body>
 </html>
