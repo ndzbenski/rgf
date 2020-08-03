@@ -1,3 +1,4 @@
+double t_gap = 461.648;
 double a_t0 = -2.00557;
 double a_t1 = -5.90524e-05;
 double a_t2 = -2.13156e-06;
@@ -7,6 +8,7 @@ double b_t2 = -6.07226e-05;
 double c_t0 = 0;
 double c_t1 = 0;
 double c_t2 = 0;
+double phi_gap = 0.0442186;
 double a_phi0 = 0;
 double a_phi1 = 0;
 double a_phi2 = 0;
